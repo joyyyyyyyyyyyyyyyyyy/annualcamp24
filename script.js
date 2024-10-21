@@ -15,7 +15,12 @@ const questions = [
       type: 'open-ended',
       question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
       answer: "2062"
-    }
+    },
+    {
+        type: 'open-ended',
+        question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
+        answer: "57"
+      }
   ];
   
   let currentQuestion = 0;
