@@ -25,16 +25,20 @@ const questions = [
 
 let currentQuestion = 0;
 let score = 0;
-let quizDuration = 60; // Total quiz time in seconds
+let quizDuration = 60;
 let timer;
 
+const homeContainer = document.getElementById('home-container');
+const quizContainer = document.getElementById('quiz-container');
+const resultContainer = document.getElementById('result-container');
 const questionContainer = document.getElementById('question-container');
 const nextButton = document.getElementById('next-btn');
+const startButton = document.getElementById('start-btn');
+const homeButton = document.getElementById('home-btn');
 const timerDisplay = document.getElementById('time');
 const timerElement = document.getElementById('timer');
 const scoreDisplay = document.getElementById('score');
 const gradeDisplay = document.getElementById('grade');
-const resultContainer = document.getElementById('result-container');
 
 // Display the current question
 function displayQuestion() {
@@ -104,9 +108,9 @@ function showResult() {
   gradeDisplay.textContent = grade;
 
   resultContainer.classList.remove('hidden');
-  questionContainer.classList.add('hidden');
-  timerElement.classList.add('hidden'); // Hide the timer
+  quizContainer.classList.add('hidden');
   nextButton.classList.add('hidden'); // Hide the Next button
+  timerElement.classList.add('hidden'); // Hide the timer
 }
 
 // Move to the next question or end the quiz
@@ -117,16 +121,38 @@ nextButton.addEventListener('click', () => {
   if (currentQuestion < questions.length) {
     displayQuestion();
   } else {
-    endQuiz(); // Manually end the quiz if all questions are answered
+    endQuiz();
   }
 });
+
+// Start the quiz
+startButton.addEventListener('click', () => {
+  homeContainer.classList.add('hidden');
+  quizContainer.classList.remove('hidden');
+  resetQuiz();
+  displayQuestion();
+  startQuizTimer();
+});
+
+// Go back to the home page
+homeButton.addEventListener('click', () => {
+  resultContainer.classList.add('hidden');
+  homeContainer.classList.remove('hidden');
+  resetQuiz();
+});
+
+// Reset the quiz state
+function resetQuiz() {
+  currentQuestion = 0;
+  score = 0;
+  quizDuration = 60;
+  timerDisplay.textContent = quizDuration; // Reset the timer display
+  nextButton.classList.remove('hidden');
+  timerElement.classList.remove('hidden');
+}
 
 // End the quiz and show the result
 function endQuiz() {
   clearInterval(timer);
   showResult();
 }
-
-// Initialize the quiz
-displayQuestion();
-startQuizTimer();
