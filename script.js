@@ -1,114 +1,132 @@
 // Questions Data
 const questions = [
-    {
-      type: 'multiple',
-      question: "What is the capital of France?",
-      options: ["Paris", "London", "Rome", "Berlin"],
-      answer: "Paris"
-    },
-    {
-      type: 'open-ended',
-      question: "What is 5 + 3?",
-      answer: "8"
-    },
-    {
-      type: 'open-ended',
-      question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
-      answer: "2062"
-    },
-    {
-        type: 'open-ended',
-        question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
-        answer: "57"
-      }
-  ];
-  
-  let currentQuestion = 0;
-  let score = 0;
-  let timer;
-  let timeLeft = 15;
-  
-  const questionContainer = document.getElementById('question-container');
-  const nextButton = document.getElementById('next-btn');
-  const timerDisplay = document.getElementById('time');
-  const scoreDisplay = document.getElementById('score');
-  const gradeDisplay = document.getElementById('grade');
-  const resultContainer = document.getElementById('result-container');
-  
-  // Display Question
-  function displayQuestion() {
-    clearInterval(timer); // Reset timer
-    timeLeft = 15;
-    timerDisplay.textContent = timeLeft;
-    startTimer(); // Start new timer
-  
-    const question = questions[currentQuestion];
-    questionContainer.innerHTML = `<h2>${question.question}</h2>`;
-  
-    if (question.type === 'multiple') {
-      question.options.forEach(option => {
-        questionContainer.innerHTML += `
-          <div>
-            <input type="radio" name="answer" value="${option}">
-            <label>${option}</label>
-          </div>
-        `;
-      });
-    } else if (question.type === 'open-ended') {
-      questionContainer.innerHTML += `<input type="text" id="open-answer" placeholder="Your answer...">`;
-    }
+  {
+    type: 'multiple',
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    type: 'open-ended',
+    question: "What is 5 + 3?",
+    answer: "8"
+  },
+  {
+    type: 'open-ended',
+    question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
+    answer: "2062"
+  },
+  {
+    type: 'open-ended',
+    question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
+    answer: "57"
   }
-  
-  // Start Timer
-  function startTimer() {
-    timer = setInterval(() => {
-      timeLeft--;
-      timerDisplay.textContent = timeLeft;
-      if (timeLeft === 0) {
-        clearInterval(timer);
-        checkAnswer();
-      }
-    }, 1000);
+];
+
+let currentQuestion = 0;
+let score = 0;
+let quizDuration = 60; // Total quiz time in seconds
+let timer;
+
+const questionContainer = document.getElementById('question-container');
+const nextButton = document.getElementById('next-btn');
+const timerDisplay = document.getElementById('time');
+const timerElement = document.getElementById('timer');
+const scoreDisplay = document.getElementById('score');
+const gradeDisplay = document.getElementById('grade');
+const resultContainer = document.getElementById('result-container');
+
+// Display the current question
+function displayQuestion() {
+  const question = questions[currentQuestion];
+  questionContainer.innerHTML = `<h2>${question.question}</h2>`;
+
+  if (question.type === 'multiple') {
+    question.options.forEach(option => {
+      questionContainer.innerHTML += `
+        <div>
+          <input type="radio" name="answer" value="${option}">
+          <label>${option}</label>
+        </div>
+      `;
+    });
+  } else if (question.type === 'open-ended') {
+    questionContainer.innerHTML += `
+      <input type="text" id="open-answer" placeholder="Your answer...">
+    `;
   }
-  
-  // Check Answer
-  function checkAnswer() {
-    const question = questions[currentQuestion];
-    let userAnswer;
-  
-    if (question.type === 'multiple') {
-      const selectedOption = document.querySelector('input[name="answer"]:checked');
-      userAnswer = selectedOption ? selectedOption.value : "";
-    } else if (question.type === 'open-ended') {
-      userAnswer = document.getElementById('open-answer').value.trim();
+}
+
+// Start the quiz timer
+function startQuizTimer() {
+  timer = setInterval(() => {
+    quizDuration--;
+    timerDisplay.textContent = quizDuration;
+
+    if (quizDuration === 0) {
+      clearInterval(timer);
+      endQuiz(); // Automatically end the quiz when time is up
     }
-  
-    if (userAnswer.toLowerCase() === question.answer.toLowerCase()) {
-      score++;
-    }
+  }, 1000);
+}
+
+// Check if the current answer is correct
+function checkAnswer() {
+  const question = questions[currentQuestion];
+  let userAnswer = "";
+
+  if (question.type === 'multiple') {
+    const selectedOption = document.querySelector('input[name="answer"]:checked');
+    userAnswer = selectedOption ? selectedOption.value : "";
+  } else if (question.type === 'open-ended') {
+    userAnswer = document.getElementById('open-answer').value.trim();
   }
-  
-  // Show Result
-  function showResult() {
-    const grade = score / questions.length >= 0.7 ? 'Pass' : 'Fail';
-    scoreDisplay.textContent = `${score} / ${questions.length}`;
-    gradeDisplay.textContent = grade;
-    resultContainer.classList.remove('hidden');
+
+  if (userAnswer.toLowerCase() === question.answer.toLowerCase()) {
+    score++;
   }
-  
-  // Next Question or Show Result
-  nextButton.addEventListener('click', () => {
-    checkAnswer();
-    currentQuestion++;
-  
-    if (currentQuestion < questions.length) {
-      displayQuestion();
-    } else {
-      showResult();
-      questionContainer.classList.add('hidden');
-      nextButton.disabled = true;
-    }
-  });
-  
-  // Initialize Quiz
-  displayQuestion();
+}
+
+// Display the final results
+function showResult() {
+  const percentage = (score / questions.length) * 100;
+  let grade;
+
+  if (percentage === 100) grade = "A1";
+  else if (percentage >= 90) grade = "A2";
+  else if (percentage >= 80) grade = "B3";
+  else if (percentage >= 70) grade = "B4";
+  else if (percentage >= 60) grade = "C5";
+  else if (percentage >= 50) grade = "C6";
+  else grade = "Fail";
+
+  scoreDisplay.textContent = `${score} / ${questions.length}`;
+  gradeDisplay.textContent = grade;
+
+  resultContainer.classList.remove('hidden');
+  questionContainer.classList.add('hidden');
+  timerElement.classList.add('hidden'); // Hide the timer
+  nextButton.classList.add('hidden'); // Hide the Next button
+}
+
+// Move to the next question or end the quiz
+nextButton.addEventListener('click', () => {
+  checkAnswer();
+  currentQuestion++;
+
+  if (currentQuestion < questions.length) {
+    displayQuestion();
+  } else {
+    endQuiz(); // Manually end the quiz if all questions are answered
+  }
+});
+
+// End the quiz and show the result
+function endQuiz() {
+  clearInterval(timer);
+  showResult();
+}
+
+// Initialize the quiz
+displayQuestion();
+startQuizTimer();
