@@ -1,41 +1,74 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+/* Global Styles */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
-  width: 50%;
-  background-color: white;
-  padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #73a5ff, #5477f5);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   text-align: center;
-  border-radius: 10px;
 }
 
-.controls {
-  margin-top: 1rem;
+/* Aesthetic H1 and H2 styling */
+h1, h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
+/* Buttons */
 button {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   border: none;
-  background-color: #4CAF50;
+  background-color: #1f4068;
   color: white;
   font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
   cursor: pointer;
-  border-radius: 5px;
+  transition: background-color 0.3s ease;
   margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #162447;
 }
 
 button:disabled {
-  background-color: #ccc;
+  background-color: #666;
 }
 
+/* Controls styling */
+.controls {
+  margin-top: 1.5rem;
+}
+
+#timer {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Hidden elements */
 .hidden {
   display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  button {
+    width: 80%;
+  }
 }

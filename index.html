@@ -3,34 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Website</title>
+  <title>GB Annual Camp '24</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Home Page -->
-    <div id="home-container">
-      <h1>How will Ms A fare?</h1>
-      <button id="start-btn">Start Quiz</button>
-    </div>
+  <!-- Home Page -->
+  <section id="home-container">
+    <h1>How will Ms A fare?</h1>
+    <button id="start-btn">Start Quiz</button>
+  </section>
 
-    <!-- Quiz Page -->
-    <div id="quiz-container" class="hidden">
-      <div id="question-container"></div>
-      <div class="controls">
-        <p id="timer">Time Left: <span id="time">15</span>s</p>
-        <button id="next-btn">Next Question</button>
-      </div>
+  <!-- Quiz Page -->
+  <section id="quiz-container" class="hidden">
+    <div class="controls">
+      <p id="timer">Time Left: <span id="time">15</span>s</p>
+      <!-- <button id="next-btn">Next Question</button> -->
     </div>
+    <div id="question-container"></div>
+    <div class="controls">
+      <!-- <p id="timer">Time Left: <span id="time">15</span>s</p> -->
+      <button id="next-btn">Next Question</button>
+    </div>
+  </section>
 
-    <!-- Result Page -->
-    <div id="result-container" class="hidden">
-      <h2>Your Results</h2>
-      <p>Total Score: <span id="score"></span></p>
-      <p>Grade: <span id="grade"></span></p>
-      <button id="home-btn">Back to Home</button>
-    </div>
-  </div>
+  <!-- Result Page -->
+  <section id="result-container" class="hidden">
+    <h2>Your Results</h2>
+    <p>Total Score: <span id="score"></span></p>
+    <p>Grade: <span id="grade"></span></p>
+    <button id="home-btn">Back to Home</button>
+  </section>
 
   <script src="script.js"></script>
 </body>
