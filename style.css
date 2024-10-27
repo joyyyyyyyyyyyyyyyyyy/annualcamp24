@@ -85,3 +85,23 @@ button:disabled {
     width: 80%;
   }
 }
+
+
+.mcqoption {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: rgb(217, 255, 0);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.mcqoption input[type="radio"] {
+  margin-right: 10px;
+  /* Add your desired styling for the radio button */
+}
+
+.mcqoption label {
+  font-size: 16px;
+  /* Add your desired styling for the label */
+}

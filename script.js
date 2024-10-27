@@ -51,7 +51,7 @@ function displayQuestion() {
   if (question.type === 'multiple') {
     question.options.forEach(option => {
       questionContainer.innerHTML += `
-        <div>
+        <div class="mcqoption">
           <input type="radio" name="answer" id="${option}" value="${option}">
           <label for="${option}">${option}</label>
         </div>
