@@ -52,8 +52,8 @@ function displayQuestion() {
     question.options.forEach(option => {
       questionContainer.innerHTML += `
         <div>
-          <input type="radio" name="answer" value="${option}">
-          <label>${option}</label>
+          <input type="radio" name="answer" id="${option}" value="${option}">
+          <label for="${option}">${option}</label>
         </div>
       `;
     });
