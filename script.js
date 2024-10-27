@@ -35,6 +35,14 @@ const timerElement = document.getElementById('timer');
 const scoreDisplay = document.getElementById('score');
 const gradeDisplay = document.getElementById('grade');
 
+// Shuffle questions randomly
+function shuffleQuestions(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 // Display the current question
 function displayQuestion() {
   const question = questions[currentQuestion];
@@ -125,6 +133,7 @@ startButton.addEventListener('click', () => {
   homeContainer.classList.add('hidden');
   quizContainer.classList.remove('hidden');
   resetQuiz();
+  shuffleQuestions(questions); // Shuffle questions before displaying
   displayQuestion();
   startQuizTimer();
 });

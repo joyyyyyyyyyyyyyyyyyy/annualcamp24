@@ -52,9 +52,12 @@ button:disabled {
 }
 
 #timer {
-  font-size: 1.2rem;
+  font-size: 25px;
   font-weight: 600;
   margin-bottom: 1rem;
+  position: absolute; /* Position the timer absolutely */
+  top: 20px; /* aligns to the top */
+  right: 20px; /* aligns to the right */
 }
 
 #next-btn {
@@ -64,6 +67,7 @@ button:disabled {
   transform: translateX(-50%);
   border-radius:0px;
   width: 100%;
+  font-size: 20px;
 }
 
 /* Hidden elements */
