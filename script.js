@@ -8,11 +8,6 @@ const questions = [
   },
   {
     type: 'open-ended',
-    question: "What is 5 + 3?",
-    answer: "8"
-  },
-  {
-    type: 'open-ended',
     question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
     answer: "2062"
   },
@@ -56,7 +51,7 @@ function displayQuestion() {
     });
   } else if (question.type === 'open-ended') {
     questionContainer.innerHTML += `
-      <input type="text" id="open-answer" placeholder="Your answer...">
+      <input type="text" id="open-answer" placeholder="enter your answer...">
     `;
   }
 }

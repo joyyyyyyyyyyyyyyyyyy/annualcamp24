@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #73a5ff, #5477f5);
+  background: linear-gradient(135deg, #73ccff, #5457f5);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@ h1, h2 {
 button {
   padding: 0.75rem 1.5rem;
   border: none;
-  background-color: #1f4068;
+  background-color: #255b9c;
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -55,6 +55,15 @@ button:disabled {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
+}
+
+#next-btn {
+  position: fixed;
+  bottom: 0px; 
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius:0px;
+  width: 100%;
 }
 
 /* Hidden elements */
