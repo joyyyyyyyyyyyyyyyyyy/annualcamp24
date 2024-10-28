@@ -28,6 +28,7 @@ const quizContainer = document.getElementById('quiz-container');
 const resultContainer = document.getElementById('result-container');
 const questionContainer = document.getElementById('question-container');
 const nextButton = document.getElementById('next-btn');
+const prevButton = document.getElementById('prev-btn');
 const startButton = document.getElementById('start-btn');
 const homeButton = document.getElementById('home-btn');
 const timerDisplay = document.getElementById('time');
@@ -49,31 +50,38 @@ function displayQuestion() {
   questionContainer.innerHTML = `<h2>${question.question}</h2>`;
 
   if (question.type === 'multiple') {
-    question.options.forEach(option => {
-      questionContainer.innerHTML += `
-        <div class="mcqoption">
-          <input type="radio" name="answer" id="${option}" value="${option}">
-          <label for="${option}">${option}</label>
-        </div>
-      `;
-    });
+      question.options.forEach(option => {
+          questionContainer.innerHTML += `
+              <div class="mcqoption">
+                  <input type="radio" name="answer" id="${option}" value="${option}">
+                  <label for="${option}">${option}</label>
+              </div>
+          `;
+      });
   } else if (question.type === 'open-ended') {
-    questionContainer.innerHTML += `
-      <input type="text" id="open-answer" placeholder="enter your answer...">
-    `;
+      questionContainer.innerHTML += `
+          <input type="text" id="open-answer" placeholder="enter your answer...">
+      `;
+  }
+
+  // Enable/disable the previous button based on the current question
+  if (currentQuestion === 0) {
+      prevButton.disabled = true;
+  } else {
+      prevButton.disabled = false;
   }
 }
 
 // Start the quiz timer
 function startQuizTimer() {
   timer = setInterval(() => {
-    quizDuration--;
-    timerDisplay.textContent = quizDuration;
+      quizDuration--;
+      timerDisplay.textContent = quizDuration;
 
-    if (quizDuration === 0) {
-      clearInterval(timer);
-      endQuiz(); // Automatically end the quiz when time is up
-    }
+      if (quizDuration === 0) {
+          clearInterval(timer);
+          endQuiz(); // Automatically end the quiz when time is up
+      }
   }, 1000);
 }
 
@@ -83,14 +91,14 @@ function checkAnswer() {
   let userAnswer = "";
 
   if (question.type === 'multiple') {
-    const selectedOption = document.querySelector('input[name="answer"]:checked');
-    userAnswer = selectedOption ? selectedOption.value : "";
+      const selectedOption = document.querySelector('input[name="answer"]:checked');
+      userAnswer = selectedOption ? selectedOption.value : "";
   } else if (question.type === 'open-ended') {
-    userAnswer = document.getElementById('open-answer').value.trim();
+      userAnswer = document.getElementById('open-answer').value.trim();
   }
 
   if (userAnswer.toLowerCase() === question.answer.toLowerCase()) {
-    score++;
+      score++;
   }
 }
 
@@ -113,6 +121,7 @@ function showResult() {
   resultContainer.classList.remove('hidden');
   quizContainer.classList.add('hidden');
   nextButton.classList.add('hidden'); // Hide the Next button
+  prevButton.classList.add('hidden'); // Hide the Previous button
   timerElement.classList.add('hidden'); // Hide the timer
 }
 
@@ -122,9 +131,20 @@ nextButton.addEventListener('click', () => {
   currentQuestion++;
 
   if (currentQuestion < questions.length) {
-    displayQuestion();
+      displayQuestion();
   } else {
-    endQuiz();
+      endQuiz();
+  }
+});
+
+// Move to the previous question or end the quiz
+prevButton.addEventListener('click', () => {
+  if (currentQuestion > 0) {
+      currentQuestion--;
+      displayQuestion();
+  } else {
+      // Handle first question, e.g., disable the button or show a message
+      prevButton.disabled = true;
   }
 });
 
@@ -152,6 +172,7 @@ function resetQuiz() {
   quizDuration = 60;
   timerDisplay.textContent = quizDuration; // Reset the timer display
   nextButton.classList.remove('hidden');
+  prevButton.classList.remove('hidden');
   timerElement.classList.remove('hidden');
 }
 
