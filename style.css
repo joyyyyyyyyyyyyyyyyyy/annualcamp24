@@ -101,7 +101,6 @@ button:disabled {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  background-color: rgb(217, 255, 0);
   padding: 10px;
   border-radius: 5px;
 }
@@ -112,6 +111,27 @@ button:disabled {
 }
 
 .mcqoption label {
-  font-size: 16px;
+  font-size: 20px;
   /* Add your desired styling for the label */
 }
+
+/* .mcqoption:nth-child(1) {
+  background-color: #070707;
+} */
+
+.mcqoption:nth-child(2) {
+  background-color: #E21B3C;
+}
+
+.mcqoption:nth-child(3) {
+  background-color: #D89E00;
+}
+
+.mcqoption:nth-child(4) {
+  background-color: #247E0C;
+}
+
+.mcqoption:nth-child(5) {
+  background-color: #1268CD;
+}
+
