@@ -22,6 +22,8 @@ let currentQuestion = 0;
 let score = 0;
 let quizDuration = 60;
 let timer;
+let answers = Array(questions.length).fill(""); // Store user answers for each question
+let correctAnswersMarked = Array(questions.length).fill(false); // Track correct answers per question
 
 const homeContainer = document.getElementById('home-container');
 const quizContainer = document.getElementById('quiz-container');
@@ -50,57 +52,101 @@ function displayQuestion() {
   questionContainer.innerHTML = `<h2>${question.question}</h2>`;
 
   if (question.type === 'multiple') {
-      question.options.forEach(option => {
-          questionContainer.innerHTML += `
-              <div class="mcqoption">
-                  <input type="radio" name="answer" id="${option}" value="${option}">
-                  <label for="${option}">${option}</label>
-              </div>
-          `;
-      });
-  } else if (question.type === 'open-ended') {
+    question.options.forEach(option => {
       questionContainer.innerHTML += `
-          <input type="text" id="open-answer" placeholder="enter your answer...">
+        <div class="mcqoption">
+          <input type="radio" name="answer" id="${option}" value="${option}" ${answers[currentQuestion] === option ? 'checked' : ''}>
+          <label for="${option}">${option}</label>
+        </div>
       `;
+    });
+
+    // Add click event to labels to select radio button when label is clicked
+    const labels = document.querySelectorAll('.mcqoption label');
+    labels.forEach(label => {
+      label.addEventListener('click', () => {
+        document.getElementById(label.getAttribute('for')).checked = true;
+        answers[currentQuestion] = label.textContent; // Update answer on label click
+      });
+    });
+  } else if (question.type === 'open-ended') {
+    questionContainer.innerHTML += `
+      <input type="text" id="open-answer" placeholder="enter your answer..." value="${answers[currentQuestion] || ''}">
+    `;
   }
 
   // Enable/disable the previous button based on the current question
-  if (currentQuestion === 0) {
-      prevButton.disabled = true;
-  } else {
-      prevButton.disabled = false;
+  prevButton.disabled = currentQuestion === 0;
+}
+
+// Store the answer for the current question
+function storeAnswer() {
+  const question = questions[currentQuestion];
+  if (question.type === 'multiple') {
+    const selectedOption = document.querySelector('input[name="answer"]:checked');
+    if (selectedOption) {
+      answers[currentQuestion] = selectedOption.value;
+    }
+  } else if (question.type === 'open-ended') {
+    const userAnswer = document.getElementById('open-answer').value.trim();
+    answers[currentQuestion] = userAnswer;
   }
 }
 
 // Start the quiz timer
 function startQuizTimer() {
   timer = setInterval(() => {
-      quizDuration--;
-      timerDisplay.textContent = quizDuration;
+    quizDuration--;
+    timerDisplay.textContent = quizDuration;
 
-      if (quizDuration === 0) {
-          clearInterval(timer);
-          endQuiz(); // Automatically end the quiz when time is up
-      }
+    if (quizDuration === 0) {
+      clearInterval(timer);
+      endQuiz(); // Automatically end the quiz when time is up
+    }
   }, 1000);
 }
 
 // Check if the current answer is correct
 function checkAnswer() {
   const question = questions[currentQuestion];
-  let userAnswer = "";
+  const userAnswer = answers[currentQuestion];
 
-  if (question.type === 'multiple') {
-      const selectedOption = document.querySelector('input[name="answer"]:checked');
-      userAnswer = selectedOption ? selectedOption.value : "";
-  } else if (question.type === 'open-ended') {
-      userAnswer = document.getElementById('open-answer').value.trim();
-  }
-
-  if (userAnswer.toLowerCase() === question.answer.toLowerCase()) {
+  // If the answer is correct and wasn't previously marked as correct, increase score and mark as correct
+  if (userAnswer && userAnswer.toLowerCase() === question.answer.toLowerCase()) {
+    if (!correctAnswersMarked[currentQuestion]) {
       score++;
+      correctAnswersMarked[currentQuestion] = true; // Mark as correct
+    }
+  } else {
+    // Reset the correct mark if answer is changed and is incorrect
+    if (correctAnswersMarked[currentQuestion]) {
+      score--;
+      correctAnswersMarked[currentQuestion] = false;
+    }
   }
 }
+
+// Move to the next question or end the quiz
+nextButton.addEventListener('click', () => {
+  storeAnswer();
+  checkAnswer();
+  currentQuestion++;
+
+  if (currentQuestion < questions.length) {
+    displayQuestion();
+  } else {
+    endQuiz();
+  }
+});
+
+// Move to the previous question
+prevButton.addEventListener('click', () => {
+  storeAnswer();
+  if (currentQuestion > 0) {
+    currentQuestion--;
+    displayQuestion();
+  }
+});
 
 // Display the final results
 function showResult() {
@@ -120,40 +166,17 @@ function showResult() {
 
   resultContainer.classList.remove('hidden');
   quizContainer.classList.add('hidden');
-  nextButton.classList.add('hidden'); // Hide the Next button
-  prevButton.classList.add('hidden'); // Hide the Previous button
-  timerElement.classList.add('hidden'); // Hide the timer
+  nextButton.classList.add('hidden');
+  prevButton.classList.add('hidden');
+  timerElement.classList.add('hidden');
 }
-
-// Move to the next question or end the quiz
-nextButton.addEventListener('click', () => {
-  checkAnswer();
-  currentQuestion++;
-
-  if (currentQuestion < questions.length) {
-      displayQuestion();
-  } else {
-      endQuiz();
-  }
-});
-
-// Move to the previous question or end the quiz
-prevButton.addEventListener('click', () => {
-  if (currentQuestion > 0) {
-      currentQuestion--;
-      displayQuestion();
-  } else {
-      // Handle first question, e.g., disable the button or show a message
-      prevButton.disabled = true;
-  }
-});
 
 // Start the quiz
 startButton.addEventListener('click', () => {
   homeContainer.classList.add('hidden');
   quizContainer.classList.remove('hidden');
   resetQuiz();
-  shuffleQuestions(questions); // Shuffle questions before displaying
+  shuffleQuestions(questions);
   displayQuestion();
   startQuizTimer();
 });
@@ -170,7 +193,9 @@ function resetQuiz() {
   currentQuestion = 0;
   score = 0;
   quizDuration = 60;
-  timerDisplay.textContent = quizDuration; // Reset the timer display
+  answers = Array(questions.length).fill(""); // Clear stored answers
+  correctAnswersMarked = Array(questions.length).fill(false); // Reset correct answers tracking
+  timerDisplay.textContent = quizDuration;
   nextButton.classList.remove('hidden');
   prevButton.classList.remove('hidden');
   timerElement.classList.remove('hidden');
