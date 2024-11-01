@@ -1,26 +1,206 @@
 // Questions Data
 const questions = [
   {
+    //qn1
     type: 'multiple',
     question: "What is the capital of France?",
     options: ["Paris", "London", "Rome", "Berlin"],
     answer: "Paris"
   },
   {
+    //qn2
+    type: 'multiple',
+    question: "In which year did World War II begin?",
+    options: ["1935", "1945", "1939", "1941"],
+    answer: "1939"
+  },
+  {
+    //qn3
+    type: 'multiple',
+    question: "Which of the following is a noble gas?",
+    options: ["Oxygen", "Nitrogen", "Hydrogen", "Helium"],
+    answer: "Helium"
+  },
+  {
+    //qn4
+    type: 'multiple',
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    //qn5
+    type: 'multiple',
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    //qn6
+    type: 'multiple',
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    //qn7
+    type: 'multiple',
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    //qn8
+    type: 'multiple',
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    //qn9
+    type: 'multiple',
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    //qn10
+    type: 'multiple',
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    //qn11
+    type: 'multiple',
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    //qn12
+    type: 'multiple',
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    //qn13
+    type: 'multiple',
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    //qn14
+    type: 'multiple',
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    //qn15
+    type: 'multiple',
+    question: "What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  //open ended qns
+  {
+    //qn1
     type: 'open-ended',
     question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
     answer: "2062"
   },
   {
+    //qn2
     type: 'open-ended',
     question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
     answer: "57"
-  }
+  },
+  {
+    //qn3
+    type: 'open-ended',
+    question: "X + X + X = 9 <br> Y + Y - X = 47 <br> 6 x Z + Y = 73 <br> X + Y + Z = ?",
+    answer: "36"
+  },
+  {
+    //qn4
+    type: 'open-ended',
+    question: "X + X + X = 9 <br> Y + Y - X = 47 <br> 6 x Z + Y = 73 <br> X + Y + Z = ?",
+    answer: "36"
+  },
+  {
+    //qn5
+    type: 'open-ended',
+    question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
+    answer: "2062"
+  },
+  {
+    //qn6
+    type: 'open-ended',
+    question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
+    answer: "57"
+  },
+  {
+    //qn7
+    type: 'open-ended',
+    question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
+    answer: "2062"
+  },
+  {
+    //qn8
+    type: 'open-ended',
+    question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
+    answer: "57"
+  },
+  {
+    //qn9
+    type: 'open-ended',
+    question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
+    answer: "2062"
+  },
+  {
+    //qn10
+    type: 'open-ended',
+    question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
+    answer: "57"
+  },
+  {
+    //qn11
+    type: 'open-ended',
+    question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
+    answer: "57"
+  },
+  {
+    //qn12
+    type: 'open-ended',
+    question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
+    answer: "2062"
+  },
+  {
+    //qn13
+    type: 'open-ended',
+    question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
+    answer: "57"
+  },
+  {
+    //qn14
+    type: 'open-ended',
+    question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
+    answer: "2062"
+  },
+  {
+    //qn15
+    type: 'open-ended',
+    question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
+    answer: "57"
+  }  
 ];
 
 let currentQuestion = 0;
 let score = 0;
-let quizDuration = 60;
+let quizDuration = 900;
 let timer;
 let answers = Array(questions.length).fill(""); // Store user answers for each question
 let correctAnswersMarked = Array(questions.length).fill(false); // Track correct answers per question
@@ -97,7 +277,11 @@ function storeAnswer() {
 function startQuizTimer() {
   timer = setInterval(() => {
     quizDuration--;
-    timerDisplay.textContent = quizDuration;
+
+    // Convert quizDuration to minutes and seconds
+    const minutes = String(Math.floor(quizDuration / 60)).padStart(2, '0');
+    const seconds = String(quizDuration % 60).padStart(2, '0');
+    timerDisplay.textContent = `${minutes}min : ${seconds}`; // Display in MM:SS format
 
     if (quizDuration === 0) {
       clearInterval(timer);
@@ -192,7 +376,7 @@ homeButton.addEventListener('click', () => {
 function resetQuiz() {
   currentQuestion = 0;
   score = 0;
-  quizDuration = 60;
+  quizDuration = 900;
   answers = Array(questions.length).fill(""); // Clear stored answers
   correctAnswersMarked = Array(questions.length).fill(false); // Reset correct answers tracking
   timerDisplay.textContent = quizDuration;
