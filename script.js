@@ -24,51 +24,51 @@ const questions = [
   {
     //qn4
     type: 'multiple',
-    question: "What is the capital of France?",
-    options: ["Paris", "London", "Rome", "Berlin"],
-    answer: "Paris"
+    question: "What is the total land area of Singapore?",
+    options: ["629.9km²", "734.4km²", "965.1km²", "827.3km²"],
+    answer: "734.4km²"
   },
   {
     //qn5
     type: 'multiple',
-    question: "What is the capital of France?",
-    options: ["Paris", "London", "Rome", "Berlin"],
-    answer: "Paris"
+    question: "What is the square root of 144?",
+    options: ["12", "16", "14", "10"],
+    answer: "12"
   },
   {
     //qn6
     type: 'multiple',
-    question: "What is the capital of France?",
-    options: ["Paris", "London", "Rome", "Berlin"],
-    answer: "Paris"
+    question: "What is the chemical symbol for Gold?",
+    options: ["Fe", "Au", "Pb", "Ag"],
+    answer: "Au"
   },
   {
     //qn7
     type: 'multiple',
-    question: "What is the capital of France?",
-    options: ["Paris", "London", "Rome", "Berlin"],
-    answer: "Paris"
+    question: "What is the capital of Australia?",
+    options: ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+    answer: "Canberra"
   },
   {
     //qn8
     type: 'multiple',
-    question: "What is the capital of France?",
-    options: ["Paris", "London", "Rome", "Berlin"],
-    answer: "Paris"
+    question: "What is the chemical formula for water?",
+    options: ["H2SO4", "CO2", "O2", "H2O"],
+    answer: "H2O"
   },
   {
     //qn9
     type: 'multiple',
-    question: "What is the capital of France?",
-    options: ["Paris", "London", "Rome", "Berlin"],
-    answer: "Paris"
+    question: "What is the largest mammal in the world?",
+    options: ["Blue Whale", "Great White Shark", "African Elephant", "Giraffe"],
+    answer: "Blue Whale"
   },
   {
     //qn10
     type: 'multiple',
-    question: "What is the capital of France?",
-    options: ["Paris", "London", "Rome", "Berlin"],
-    answer: "Paris"
+    question: "Who was the first woman to fly solo across the Atlantic Ocean?",
+    options: ["Harriet Quimby", "Amelia Earhart", "Bessie Coleman", "Jacqueline Cochran"],
+    answer: "Amelia Earhart"
   },
   {
     //qn11
@@ -127,8 +127,8 @@ const questions = [
   {
     //qn4
     type: 'open-ended',
-    question: "X + X + X = 9 <br> Y + Y - X = 47 <br> 6 x Z + Y = 73 <br> X + Y + Z = ?",
-    answer: "36"
+    question: "What is the largest ocean on Earth?",
+    answer: "Pacific Ocean"
   },
   {
     //qn5
