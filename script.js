@@ -45,9 +45,9 @@ const questions = [
   {
     //qn7
     type: 'multiple',
-    question: "What is the capital of Australia?",
-    options: ["Sydney", "Melbourne", "Canberra", "Brisbane"],
-    answer: "Canberra"
+    question: "Who was the first woman to fly solo across the Atlantic Ocean?",
+    options: ["Harriet Quimby", "Amelia Earhart", "Bessie Coleman", "Jacqueline Cochran"],
+    answer: "Amelia Earhart"
   },
   {
     //qn8
@@ -66,45 +66,45 @@ const questions = [
   {
     //qn10
     type: 'multiple',
-    question: "Who was the first woman to fly solo across the Atlantic Ocean?",
-    options: ["Harriet Quimby", "Amelia Earhart", "Bessie Coleman", "Jacqueline Cochran"],
-    answer: "Amelia Earhart"
-  },
-  {
-    //qn11
-    type: 'multiple',
     question: "What is the capital of France?",
     options: ["Paris", "London", "Rome", "Berlin"],
     answer: "Paris"
   },
-  {
-    //qn12
-    type: 'multiple',
-    question: "What is the capital of France?",
-    options: ["Paris", "London", "Rome", "Berlin"],
-    answer: "Paris"
-  },
-  {
-    //qn13
-    type: 'multiple',
-    question: "What is the capital of France?",
-    options: ["Paris", "London", "Rome", "Berlin"],
-    answer: "Paris"
-  },
-  {
-    //qn14
-    type: 'multiple',
-    question: "What is the capital of France?",
-    options: ["Paris", "London", "Rome", "Berlin"],
-    answer: "Paris"
-  },
-  {
-    //qn15
-    type: 'multiple',
-    question: "What is the capital of France?",
-    options: ["Paris", "London", "Rome", "Berlin"],
-    answer: "Paris"
-  },
+  // {
+  //   //qn11
+  //   type: 'multiple',
+  //   question: "What is the capital of France?",
+  //   options: ["Paris", "London", "Rome", "Berlin"],
+  //   answer: "Paris"
+  // },
+  // {
+  //   //qn12
+  //   type: 'multiple',
+  //   question: "What is the capital of France?",
+  //   options: ["Paris", "London", "Rome", "Berlin"],
+  //   answer: "Paris"
+  // },
+  // {
+  //   //qn13
+  //   type: 'multiple',
+  //   question: "What is the capital of France?",
+  //   options: ["Paris", "London", "Rome", "Berlin"],
+  //   answer: "Paris"
+  // },
+  // {
+  //   //qn14
+  //   type: 'multiple',
+  //   question: "What is the capital of France?",
+  //   options: ["Paris", "London", "Rome", "Berlin"],
+  //   answer: "Paris"
+  // },
+  // {
+  //   //qn15
+  //   type: 'multiple',
+  //   question: "What is the capital of France?",
+  //   options: ["Paris", "London", "Rome", "Berlin"],
+  //   answer: "Paris"
+  // },
   //open ended qns
   {
     //qn1
@@ -133,69 +133,69 @@ const questions = [
   {
     //qn5
     type: 'open-ended',
-    question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
-    answer: "2062"
-  },
-  {
-    //qn6
-    type: 'open-ended',
-    question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
-    answer: "57"
-  },
-  {
-    //qn7
-    type: 'open-ended',
-    question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
-    answer: "2062"
-  },
-  {
-    //qn8
-    type: 'open-ended',
-    question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
-    answer: "57"
-  },
-  {
-    //qn9
-    type: 'open-ended',
-    question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
-    answer: "2062"
-  },
-  {
-    //qn10
-    type: 'open-ended',
-    question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
-    answer: "57"
-  },
-  {
-    //qn11
-    type: 'open-ended',
-    question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
-    answer: "57"
-  },
-  {
-    //qn12
-    type: 'open-ended',
-    question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
-    answer: "2062"
-  },
-  {
-    //qn13
-    type: 'open-ended',
-    question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
-    answer: "57"
-  },
-  {
-    //qn14
-    type: 'open-ended',
-    question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
-    answer: "2062"
-  },
-  {
-    //qn15
-    type: 'open-ended',
-    question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
-    answer: "57"
-  }  
+    question: "What is the capital of Australia?",
+    answer: "Canberra"
+  }
+  // {
+  //   //qn6
+  //   type: 'open-ended',
+  //   question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
+  //   answer: "57"
+  // },
+  // {
+  //   //qn7
+  //   type: 'open-ended',
+  //   question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
+  //   answer: "2062"
+  // },
+  // {
+  //   //qn8
+  //   type: 'open-ended',
+  //   question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
+  //   answer: "57"
+  // },
+  // {
+  //   //qn9
+  //   type: 'open-ended',
+  //   question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
+  //   answer: "2062"
+  // },
+  // {
+  //   //qn10
+  //   type: 'open-ended',
+  //   question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
+  //   answer: "57"
+  // },
+  // {
+  //   //qn11
+  //   type: 'open-ended',
+  //   question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
+  //   answer: "57"
+  // },
+  // {
+  //   //qn12
+  //   type: 'open-ended',
+  //   question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
+  //   answer: "2062"
+  // },
+  // {
+  //   //qn13
+  //   type: 'open-ended',
+  //   question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
+  //   answer: "57"
+  // },
+  // {
+  //   //qn14
+  //   type: 'open-ended',
+  //   question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
+  //   answer: "2062"
+  // },
+  // {
+  //   //qn15
+  //   type: 'open-ended',
+  //   question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
+  //   answer: "57"
+  // }  
 ];
 
 let currentQuestion = 0;
