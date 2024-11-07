@@ -66,24 +66,24 @@ const questions = [
   {
     //qn10
     type: 'multiple',
-    question: "What is the capital of France?",
-    options: ["Paris", "London", "Rome", "Berlin"],
-    answer: "Paris"
+    question: "How many elements are there in the periodic table?",
+    options: ["123", "118", "115", "120"],
+    answer: "118"
   },
-  // {
-  //   //qn11
-  //   type: 'multiple',
-  //   question: "What is the capital of France?",
-  //   options: ["Paris", "London", "Rome", "Berlin"],
-  //   answer: "Paris"
-  // },
-  // {
-  //   //qn12
-  //   type: 'multiple',
-  //   question: "What is the capital of France?",
-  //   options: ["Paris", "London", "Rome", "Berlin"],
-  //   answer: "Paris"
-  // },
+  {
+    //qn11
+    type: 'multiple',
+    question: "Which company developed the first mobile phone?",
+    options: ["Apple", "IBM", "Motorola", "Samsung"],
+    answer: "Motorola"
+  },
+  {
+    //qn12
+    type: 'multiple',
+    question: "How many bones are there in the human body?",
+    options: ["208", "210", "204", "206"],
+    answer: "206"
+  },
   // {
   //   //qn13
   //   type: 'multiple',
@@ -105,6 +105,7 @@ const questions = [
   //   options: ["Paris", "London", "Rome", "Berlin"],
   //   answer: "Paris"
   // },
+
   //open ended qns
   {
     //qn1
@@ -135,67 +136,67 @@ const questions = [
     type: 'open-ended',
     question: "What is the capital of Australia?",
     answer: "Canberra"
-  }
-  // {
-  //   //qn6
-  //   type: 'open-ended',
-  //   question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
-  //   answer: "57"
-  // },
-  // {
-  //   //qn7
-  //   type: 'open-ended',
-  //   question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
-  //   answer: "2062"
-  // },
-  // {
-  //   //qn8
-  //   type: 'open-ended',
-  //   question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
-  //   answer: "57"
-  // },
-  // {
-  //   //qn9
-  //   type: 'open-ended',
-  //   question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
-  //   answer: "2062"
-  // },
-  // {
-  //   //qn10
-  //   type: 'open-ended',
-  //   question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
-  //   answer: "57"
-  // },
-  // {
-  //   //qn11
-  //   type: 'open-ended',
-  //   question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
-  //   answer: "57"
-  // },
-  // {
-  //   //qn12
-  //   type: 'open-ended',
-  //   question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
-  //   answer: "2062"
-  // },
-  // {
-  //   //qn13
-  //   type: 'open-ended',
-  //   question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
-  //   answer: "57"
-  // },
-  // {
-  //   //qn14
-  //   type: 'open-ended',
-  //   question: "A comet passes Earth every 76 years. If the last pass was in 1986, in what year will it pass next?",
-  //   answer: "2062"
-  // },
-  // {
-  //   //qn15
-  //   type: 'open-ended',
-  //   question: "A + A + A = 39 <br> B + B - A = 25 <br> 6 + C + B = 50 <br> A + B + C = ?",
-  //   answer: "57"
-  // }  
+  },
+  {
+    //qn6
+    type: 'open-ended',
+    question: "Which country do Sinologists study?",
+    answer: "China"
+  },
+  {
+    //qn7
+    type: 'open-ended',
+    question: "Who betrayed Jesus to the Romans?",
+    answer: "Judas"
+  },
+  {
+    //qn8
+    type: 'open-ended',
+    question: "Which part of the body is the patella located at?",
+    answer: "Knee"
+  },
+  {
+    //qn9
+    type: 'open-ended',
+    question: "What is the name of Olivia Rodrigo’s debut album?",
+    answer: "Sour"
+  },
+  {
+    //qn10
+    type: 'open-ended',
+    question: "What number comes next in the series: 2, 6, 12, 20, 30, ___?",
+    answer: "42"
+  },
+  {
+    //qn11
+    type: 'open-ended',
+    question: "Which letter comes next in the sequence: A, C, E, G, I, ___?",
+    answer: "K"
+  },
+  {
+    //qn12
+    type: 'open-ended',
+    question: "What is the smallest positive integer that is evenly divisible by 2, 3, and 5?",
+    answer: "30"
+  },
+  {
+    //qn13
+    type: 'open-ended',
+    question: "What goes up but never comes down?",
+    answer: "Age"
+  },
+  {
+    //qn14
+    type: 'open-ended',
+    question: "Who won the 2022 F1 World Championship?",
+    answer: "Max Verstappen"
+  },
+  {
+    //qn15
+    type: 'open-ended',
+    question: "What does DNA stand for?",
+    answer: "Deoxyribonucleic Acid"
+  }  
 ];
 
 let currentQuestion = 0;
