@@ -91,20 +91,20 @@ const questions = [
     options: ["1918", "1921", "1914", "1924"],
     answer: "1918"
   },
-  // {
-  //   //qn14
-  //   type: 'multiple',
-  //   question: "What is the capital of France?",
-  //   options: ["Paris", "London", "Rome", "Berlin"],
-  //   answer: "Paris"
-  // },
-  // {
-  //   //qn15
-  //   type: 'multiple',
-  //   question: "What is the capital of France?",
-  //   options: ["Paris", "London", "Rome", "Berlin"],
-  //   answer: "Paris"
-  // },
+  {
+    //qn14
+    type: 'multiple',
+    question: "Which is the longest river in the world?",
+    options: ["Yangtze River", "Nile River", "Mississippi River", "Amazon River"],
+    answer: "Nile River"
+  },
+  {
+    //qn15
+    type: 'multiple',
+    question: "Which country has won the most World Cup?",
+    options: ["Germany", "Argentina", "Brazil", "Italy"],
+    answer: "Brazil"
+  },
 
   //open ended qns
   {
