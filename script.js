@@ -84,13 +84,13 @@ const questions = [
     options: ["208", "210", "204", "206"],
     answer: "206"
   },
-  // {
-  //   //qn13
-  //   type: 'multiple',
-  //   question: "What is the capital of France?",
-  //   options: ["Paris", "London", "Rome", "Berlin"],
-  //   answer: "Paris"
-  // },
+  {
+    //qn13
+    type: 'multiple',
+    question: "In which year did World War I ended?",
+    options: ["1918", "1921", "1914", "1924"],
+    answer: "1918"
+  },
   // {
   //   //qn14
   //   type: 'multiple',
